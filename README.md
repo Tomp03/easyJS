@@ -1,1 +1,1 @@
-https://cdn.jsdelivr.net/gh/Tomp03/easyJS@main/easyjs.js
+https://cdn.jsdelivr.net/gh/Tomp03/lib-easyJS@main/easyjs.js
