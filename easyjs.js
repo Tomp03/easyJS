@@ -1,3 +1,9 @@
+/** InnerHTML
+ *
+ * @param {*} selector // string or object
+ * @param {string} sign // + or =
+ * @param {string} content
+ */
 function easyHTML(selector, sign, content) {
   if (typeof selector === "object") {
     if (sign == "+") {
@@ -20,9 +26,20 @@ function easyHTML(selector, sign, content) {
   }
 }
 
+/** Query selector
+ *
+ * @param {string} selector
+ */
 function easySelect(selector) {
   return document.querySelector(selector);
 }
+
+/** Event listener
+ *
+ * @param {*} selector // string or object
+ * @param {string} event // click, keyup ...
+ * @param {*} callback
+ */
 
 function easyEvent(selector, event, callback) {
   if (typeof selector === "string") {
@@ -34,6 +51,14 @@ function easyEvent(selector, event, callback) {
   }
 }
 
+/** Fetch
+ *
+ * @param {string} url // your URL
+ * @param {*} callback // callback for use your data
+ * @param {string} method // default : GET
+ * @param {object} headers // default : {}
+ * @param {*} body // default : body
+ */
 async function easyFetch(url, callback, method = "GET", headers = {}, body) {
   const response = await fetch(url, {
     method: method,
@@ -46,6 +71,11 @@ async function easyFetch(url, callback, method = "GET", headers = {}, body) {
   callback(data);
 }
 
+/** Local storage save
+ *
+ * @param {string} key
+ * @param {*} value // string or object
+ */
 function easySave(key, value) {
   if (typeof value === "object") {
     localStorage.setItem(key, JSON.stringify(value));
@@ -54,6 +84,10 @@ function easySave(key, value) {
   localStorage.setItem(key, value);
 }
 
+/** Local storage load
+ *
+ * @param {string} key
+ */
 function easyLoad(key) {
   return localStorage.getItem(key);
 }
